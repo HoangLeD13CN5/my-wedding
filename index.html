@@ -385,11 +385,9 @@
   <section data-movable="true" data-hidable="true" class="wpo-video-section pb-0 section-padding" data-uuid="65962c65e0455">
     <h2 class="hidden" data-uuid="65962c65e045a">some</h2>
     <div class="container-fluid" data-uuid="65962c65e045e">
-      <div class="video-wrap" data-uuid="65962c65e0463">
+      <div data-uuid="65962c65e0463">
         <img data-editable="true" src="./preview_files/IMG_ngang_7243.jpg" style="aspect-ratio: 477/184; object-fit: cover" alt="" data-uuid="65962c65e0468">
-        <a data-uuid="65962c65e046d" href="https://www.youtube.com/embed/y_-fOq2Q8-o" class="video-btn vs-video-btn" data-type="iframe"><i data-uuid="65962c65e0472">
-          <img src="./preview_files/play-button.png" alt="Icon" style="padding: auto; vertical-align: middle;">
-        </i></a>
+        <a data-uuid="65962c65e046d" href="https://www.youtube.com/embed/y_-fOq2Q8-o" class="video-btn vs-video-btn" data-type="iframe"><i class="ri-play-circle-line icon-play" data-uuid="65962c65e0472"></i></a>
       </div>
     </div>
   </section>
@@ -1038,11 +1036,8 @@
         })
       //AUDIO
       $(".toggleAudio").on("click",function(){
-        audio = $("#audio")
-        audio[0].paused ? 
         $(this).find("i").toggleClass("ri-volume-up-fill")
-        :
-        $(this).find("i").toggleClass("ri-volume-mute-fill");
+        audio = $("#audio")
         audio[0].paused ? 
         audio[0].play()
         : 
@@ -1062,6 +1057,10 @@ background: #fff;
 }
 .wpo-portfolio-section .portfolio-grids .owl-dots button.active {
   background: #657150 !important;
+}
+.icon-play {
+    color: white; /* Thay đổi màu sắc ở đây */
+    font-size: 24px; /* Kích thước icon */
 }
 </style>
 <script src="./preview_files/preview-countdown.js.download"></script>
