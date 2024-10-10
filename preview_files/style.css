@@ -112,6 +112,44 @@ img {
     animation: 2s linear infinite rotating
 }
 
+#audio {
+
+    display: none;
+
+}
+
+ /* AUDIO */
+
+ #audio {display:none}
+
+ .toggleAudio {
+
+    position: fixed;
+
+    top: 40px;
+
+    right: 20px;
+
+    width: 40px;
+
+    height: 40px;
+
+    background-color: #101010;
+
+    border-radius: 50%;
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    cursor: pointer;
+
+}
+
+.toggleAudio i {color:white;}
+
 @-webkit-keyframes rotating {
     from {
         -webkit-transform: rotate(0);

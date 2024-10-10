@@ -387,7 +387,7 @@
       <div class="video-wrap" data-uuid="65962c65e0463">
         <img data-editable="true" src="./preview_files/IMG_ngang_7243.jpg" style="aspect-ratio: 477/184; object-fit: cover" alt="" data-uuid="65962c65e0468">
         <a data-uuid="65962c65e046d" href="https://www.youtube.com/embed/y_-fOq2Q8-o" class="video-btn vs-video-btn" data-type="iframe"><i data-uuid="65962c65e0472">
-          <img src="./preview_files/play-button.png" alt="Icon" style="width: 50px; height: 50px; vertical-align: middle;">
+          <img src="./preview_files/play-button.png" alt="Icon" style="padding: auto; vertical-align: middle;">
         </i></a>
       </div>
     </div>
@@ -1011,31 +1011,43 @@
     <script>
       //XỬ LÝ FORM
       $(document).ready(function(){
-      $('#contact-form-main').on('submit', function(e){
-          e.preventDefault();
-          var selectElement = document.getElementById("ikmyj4");
-          var selectedValue = selectElement.value;  // Lấy giá trị được chọn
-          var form_data = {
-              'entry.81926541': $('name').val(), // tên
-              'entry.275402761': $('phone').val(), // số điện thoại
-              'entry.1794488734': $('input[name="decision"]:checked').val(), // Đi,Không đi
-              'entry.1577644144': $('input[name="guest_of"]:checked').val(), // Chú rể, Cô dâu
-              'entry.1176440184': selectedValue, // số khách
-              'entry.1740490105': $('message').val() // lời chúc
-          }
-         $.ajax({
-          url: "https://docs.google.com/forms/d/e/1FAIpQLSdbDLdbdesGiH16_28He90fM50UFjRlyGxwvAMB1oX3ccDlTw/formResponse",
-          type: "POST",
-          data : form_data,
-          dataType: "xml",
-          statusCode: {
-              200: function() {
-                  alert('200')
-              }
-          }
-          })
-      })
-      return false;
+        $('#contact-form-main').on('submit', function(e){
+            e.preventDefault();
+            var selectElement = document.getElementById("ikmyj4");
+            var selectedValue = selectElement.value;  // Lấy giá trị được chọn
+            var form_data = {
+                'entry.81926541': $('name').val(), // tên
+                'entry.275402761': $('phone').val(), // số điện thoại
+                'entry.1794488734': $('input[name="decision"]:checked').val(), // Đi,Không đi
+                'entry.1577644144': $('input[name="guest_of"]:checked').val(), // Chú rể, Cô dâu
+                'entry.1176440184': selectedValue, // số khách
+                'entry.1740490105': $('message').val() // lời chúc
+            }
+          $.ajax({
+            url: "https://docs.google.com/forms/d/e/1FAIpQLSdbDLdbdesGiH16_28He90fM50UFjRlyGxwvAMB1oX3ccDlTw/formResponse",
+            type: "POST",
+            data : form_data,
+            dataType: "xml",
+            statusCode: {
+                200: function() {
+                    alert('200')
+                }
+            }
+            })
+        })
+      //AUDIO
+      $(".toggleAudio").on("click",function(){
+        audio = $("#audio")
+        audio[0].paused ? 
+        $(this).find("i img").attr("src", "./preview_files/volume.png")
+        :
+        $(this).find("i img").attr("src", "./preview_files/volume_mute.png");
+        audio[0].paused ? 
+        audio[0].play()
+        : 
+        audio[0].pause();
+        })
+        return false;
     })
     </script>
     <!-- END FORM XÁC NHẬN -->
@@ -1051,6 +1063,15 @@ background: #fff;
   background: #657150 !important;
 }
 </style>
-  <script src="./preview_files/preview-countdown.js.download"></script>
+<script src="./preview_files/preview-countdown.js.download"></script>
+
+<!-- AUDIO -->
+<audio src="./media/Shane-Filan-Beautiful-In-White-Official-Video-3.mp3" controls="" autoplay="" id="audio">
+
+</audio>
+<!-- END AUDIO -->
+<button class="toggleAudio">
+        <i><img src="./preview_files/volume_mute.png" alt="Icon" style="padding: auto; vertical-align: middle;"></i>
+</button>
 </body>
 </html>
