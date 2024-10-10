@@ -22,6 +22,7 @@
     <link href="./preview_files/odometer-theme-default.css" rel="stylesheet">
     <link href="./preview_files/jquery-ui.css" rel="stylesheet">
     <link href="./preview_files/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" id="uikit-css" href="./css/uikit.min.css" media="all">
 
     <style type="text/css">
       .fancybox-margin {
@@ -65,28 +66,28 @@
                     animation-name: fadeInUp;
                   " data-uuid="65962c65e02de">
                   <div class="clock-grids" data-uuid="65962c65e02df">
-                    <div id="clock" data-uuid="65962c65e02e1">
+                    <div id="clock" data-uuid="65962c65e02e1" uk-countdown="date: 2024-10-31T23:59:59+00:00">
                       <div class="box" data-uuid="65962c65e02e2">
                         <div data-uuid="65962c65e02e4">
-                          <div class="time vs-time-days" data-uuid="65962c65e02e5">364</div>
+                          <div class="time uk-countdown-number uk-countdown-days" data-uuid="65962c65e02e5" ></div>
                           <span data-uuid="65962c65e02e7">Ngày</span>
                         </div>
                       </div>
                       <div class="box" data-uuid="65962c65e02e9">
                         <div data-uuid="65962c65e02ea">
-                          <div class="time vs-time-hours" data-uuid="65962c65e02ec">23</div>
+                          <div class="time uk-countdown-number uk-countdown-hours" data-uuid="65962c65e02ec"></div>
                           <span data-uuid="65962c65e02ee">Giờ</span>
                         </div>
                       </div>
                       <div class="box" data-uuid="65962c65e02ef">
                         <div data-uuid="65962c65e02f1">
-                          <div class="time vs-time-minutes" data-uuid="65962c65e02f3">59</div>
+                          <div class="time uk-countdown-number uk-countdown-minutes" data-uuid="65962c65e02f3"></div>
                           <span data-uuid="65962c65e02f5">Phút</span>
                         </div>
                       </div>
                       <div class="box" data-uuid="65962c65e02f6">
                         <div data-uuid="65962c65e02f8">
-                          <div class="time vs-time-seconds" data-uuid="65962c65e02fa">28</div>
+                          <div class="time uk-countdown-number uk-countdown-seconds" data-uuid="65962c65e02fa"></div>
                           <span data-uuid="65962c65e02fc">Giây</span>
                         </div>
                       </div>
@@ -605,9 +606,6 @@
                 <div data-uuid="65962c65e06f9" id="i5vad6" style="box-sizing: border-box">
                   <input type="text" name="name" id="name" placeholder="Tên" data-uuid="65962c65e0701" class="form-control vs-attendance-name" style="box-sizing: border-box">
                 </div>
-                <div data-uuid="65962c65e0708" id="iexxl8" style="box-sizing: border-box">
-                  <input type="email" name="email" id="email" placeholder="Email" data-uuid="65962c65e070f" class="form-control vs-attendance-email" style="box-sizing: border-box">
-                </div>
                 <div data-uuid="65962c65e0717" id="ibgeqj" style="box-sizing: border-box">
                   <input type="text" name="phone" id="phone" placeholder="Số điện thoại" data-uuid="65962c65e071e" class="form-control vs-attendance-phone" style="box-sizing: border-box">
                 </div>
@@ -1006,8 +1004,41 @@
     <script src="./preview_files/jquery-plugin-collection.js.download"></script>
     <script src="./preview_files/moving-animation.js.download"></script>
     <script src="./preview_files/tilt.jquery.min.js.download"></script>
+    <script src="./js/uikit.min.js" id="uikit js-js"></script>
+    <script src="./js/uikit-icons.min.js" id="uikit icon-js"></script>
     <!-- Custom script for this template -->
     <script src="./preview_files/script.js.download"></script><a href="https://api.vesey.click/templates/#" class="back-to-top" style="display: none;"><i class="ti-arrow-up"></i></a>
+    <script>
+      //XỬ LÝ FORM
+      $(document).ready(function(){
+      $('#contact-form-main').on('submit', function(e){
+          e.preventDefault();
+          var selectElement = document.getElementById("ikmyj4");
+          var selectedValue = selectElement.value;  // Lấy giá trị được chọn
+          var form_data = {
+              'entry.81926541': $('name').val(), // tên
+              'entry.275402761': $('phone').val(), // số điện thoại
+              'entry.1794488734': $('input[name="decision"]:checked').val(), // Đi,Không đi
+              'entry.1577644144': $('input[name="guest_of"]:checked').val(), // Chú rể, Cô dâu
+              'entry.1176440184': selectedValue, // số khách
+              'entry.1740490105': $('message').val() // lời chúc
+          }
+         $.ajax({
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSdbDLdbdesGiH16_28He90fM50UFjRlyGxwvAMB1oX3ccDlTw/formResponse",
+          type: "POST",
+          data : form_data,
+          dataType: "xml",
+          statusCode: {
+              200: function() {
+                  alert('200')
+              }
+          }
+          })
+      })
+      return false;
+    })
+    </script>
+    <!-- END FORM XÁC NHẬN -->
 <style>
 .wpo-portfolio-section .portfolio-grids .owl-dots button {
   width: 15px !important;
@@ -1020,4 +1051,6 @@ background: #fff;
   background: #657150 !important;
 }
 </style>
-            <script src="./preview_files/preview-countdown.js.download"></script></body></html>
+  <script src="./preview_files/preview-countdown.js.download"></script>
+</body>
+</html>
