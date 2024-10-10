@@ -22,6 +22,7 @@
     <link href="./preview_files/odometer-theme-default.css" rel="stylesheet">
     <link href="./preview_files/jquery-ui.css" rel="stylesheet">
     <link href="./preview_files/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" id="remixicon-css" href="css/remixicon.css" media="all">
     <link rel="stylesheet" id="uikit-css" href="./css/uikit.min.css" media="all">
 
     <style type="text/css">
@@ -57,7 +58,7 @@
                     animation-name: fadeInUp;
                   " data-uuid="65962c65e02da">
                   <p data-editable="true" data-uuid="65962c65e02dc">
-                    Chúng mình cưới, 10 tháng 10 2025
+                    Chúng mình cưới, 31 tháng 10 2025
                   </p>
                 </div>
                 <div class="wpo-wedding-date wow fadeInUp" data-wow-duration="1700ms" style="
@@ -254,7 +255,7 @@
           <div class="text-center mt-5" style="box-sizing: border-box" data-uuid="65962c65e0394">
             <span class="font-questrial" style="box-sizing: border-box" data-editable="true" data-uuid="65962c65e0397">Tổ chức vào lúc 09 giờ 00</span>
             <h4 class="fw-bold font-questrial mt-4" style="box-sizing: border-box" data-editable="true" data-uuid="65962c65e039b">
-              Thứ Tư, ngày 10 tháng 10 năm 2025
+              Thứ Tư, ngày 31 tháng 10 năm 2025
             </h4>
             <h5 class="font-questrial mt-3 fst-italic" data-editable="true" style="box-sizing: border-box" data-uuid="65962c65e039f">
               (Tức ngày 10 tháng 09 năm 2025 Ất Tỵ)
@@ -1030,7 +1031,7 @@
             dataType: "xml",
             statusCode: {
                 200: function() {
-                    alert('200')
+                    alert('Cám ơn bạn đã dành chút thời gian để nói cho chúng mình biết ý định của bạn. Rất hân hạnh được đón tiếp bạn tại bữa tiệc!')
                 }
             }
             })
@@ -1039,9 +1040,9 @@
       $(".toggleAudio").on("click",function(){
         audio = $("#audio")
         audio[0].paused ? 
-        $(this).find("i img").attr("src", "./preview_files/volume.png")
+        $(this).find("i").toggleClass("ri-volume-up-fill")
         :
-        $(this).find("i img").attr("src", "./preview_files/volume_mute.png");
+        $(this).find("i").toggleClass("ri-volume-mute-fill");
         audio[0].paused ? 
         audio[0].play()
         : 
@@ -1071,7 +1072,7 @@ background: #fff;
 </audio>
 <!-- END AUDIO -->
 <button class="toggleAudio">
-        <i><img src="./preview_files/volume_mute.png" alt="Icon" style="padding: auto; vertical-align: middle;"></i>
+  <i class="ri-volume-mute-fill"></i>
 </button>
 </body>
 </html>
