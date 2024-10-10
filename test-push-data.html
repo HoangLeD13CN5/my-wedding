@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheets API AJAX - Ghi Dữ liệu</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <h1>Ghi dữ liệu vào Google Sheets</h1>
+    <button id="send-data">Ghi Dữ liệu</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#send-data').on('click', function() {
+                const data = {
+                    name: "John Doe",
+                    phone: "0359544034",
+                    attend: "Có",
+                    guest_of: "Chú rể",
+                    guest: "2",
+                    message: "hello"
+                };
+                console.log(JSON.stringify(data));
+                $.ajax({
+                    url: 'https://script.google.com/macros/s/AKfycbyr35mCnoAoewELwCYz5GhuRIZd04-UdKhyK8tB-5Nkuc9IDQeLDVZh4CoX7pQBjHfqRg/exec', // Thay thế bằng URL Webhook của bạn
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify(data),
+                    success: function(response) {
+                        console.log(response); // Xem phản hồi từ Google Apps Script
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Lỗi:', error);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
