@@ -24,7 +24,21 @@
     <link href="./preview_files/animate.min.css" rel="stylesheet">
     <link rel="stylesheet" id="remixicon-css" href="css/remixicon.css" media="all">
     <link rel="stylesheet" id="uikit-css" href="./css/uikit.min.css" media="all">
-
+    <style>
+      /* Style cho hiệu ứng loading */
+      #loading {
+          display: none;  /* Ẩn đi khi chưa gửi yêu cầu AJAX */
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+          background-color: rgba(0, 0, 0, 0.7);
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+      }
+  </style>
     <style type="text/css">
       .fancybox-margin {
         margin-right: 15px;
@@ -1009,17 +1023,20 @@
                     message: $('#message').val()
                 };
                 console.log(JSON.stringify(data));
+                $('#loading').show();
                 $.ajax({
-                    url: 'https://script.google.com/macros/s/AKfycbyr35mCnoAoewELwCYz5GhuRIZd04-UdKhyK8tB-5Nkuc9IDQeLDVZh4CoX7pQBjHfqRg/exec', // Thay thế bằng URL Webhook của bạn
+                    url: 'https://sandboxlending.vnptmedia.vn/topi/vam/register', // Thay thế bằng URL Webhook của bạn
                     type: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify(data),
                     success: function(response) {
-                        console.log(response); // Xem phản hồi từ Google Apps Script
+                        $('#loading').hide();
                         alert('Cám ơn bạn đã dành chút thời gian để nói cho chúng mình biết ý định của bạn. Rất hân hạnh được đón tiếp bạn tại bữa tiệc!');
                     },
                     error: function(xhr, status, error) {
+                        $('#loading').hide();
                         console.error('Lỗi:', error);
+                        alert('Cám ơn bạn đã dành chút thời gian để nói cho chúng mình biết ý định của bạn. Rất hân hạnh được đón tiếp bạn tại bữa tiệc!');
                     }
                 });
         })
@@ -1062,5 +1079,10 @@ background: #fff;
 <button class="toggleAudio">
   <i class="ri-volume-mute-fill"></i>
 </button>
+
+
+<!-- Chỉ báo loading -->
+<div id="loading">Loading...</div>
+
 </body>
 </html>
