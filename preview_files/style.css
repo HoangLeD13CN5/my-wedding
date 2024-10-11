@@ -1325,7 +1325,8 @@ img {
     }
 
     .wpo-story-section .wpo-story-item .wpo-story-img-wrap .wpo-story-img {
-        max-width: 260px
+        margin-top: 60px;
+        max-width: 160px
     }
 
     .wpo-story-section .wpo-story-item .wpo-story-img-wrap .clip-shape svg {
@@ -1453,8 +1454,23 @@ img {
         line-height: 36px
     }
 
+    .wpo-section-title {
+        margin-bottom: 100px;
+    }
+
     .wpo-story-section .wpo-story-item .wpo-story-content .wpo-story-content-inner span {
+        margin-top: 35px;
         margin-bottom: 10px
+    }
+
+    .wpo-story-section .wpo-story-item .wpo-story-content .wpo-story-content-inner p {
+        margin-bottom: 30px
+    }
+
+    .wpo-story-section .wpo-story-item .wpo-story-content {
+        margin-bottom:20px;
+        font-size: 25px;
+        line-height: 36px;
     }
 
     .wpo-story-section .wpo-story-item:first-child {
@@ -2356,11 +2372,9 @@ img {
     transform: translate(-50%,-50%);
     width: 120px;
     height: 120px;
-    border: 1px solid #fff;
     text-align: center;
     border-radius: 50%;
     line-height: 120px;
-    background: rgba(255,255,255,.2);
     z-index: 11
 }
 
