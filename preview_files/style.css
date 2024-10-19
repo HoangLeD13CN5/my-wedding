@@ -1158,6 +1158,39 @@ img {
     mask-repeat: no-repeat
 }
 
+.wpo-couple-section .couple-area .couple-item .couple-img .img-coup-cc {
+    padding-left: 35px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+    padding-right: 80px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .wpo-couple-section .couple-area .couple-item .couple-img .img-coup-cc {
+        padding-left: 80px;
+        padding-top: 50px;
+        padding-bottom: 40px;
+        padding-right: 55px;
+    }
+}
+
+.wpo-couple-section .couple-area .couple-item .couple-img .img-coup-dd {
+    padding-left: 58px;
+    padding-top: 35px;
+    padding-bottom: 60px;
+    padding-right: 60px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .wpo-couple-section .couple-area .couple-item .couple-img .img-coup-dd {
+        padding-left: 50px;
+        padding-top: 35px;
+        padding-bottom: 70px;
+        padding-right: 100px;
+    }
+}
+
+
 .wpo-couple-section .couple-area .couple-item .couple-img-wrap .c-shape {
     position: absolute;
     left: -115px;
