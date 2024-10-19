@@ -248,7 +248,7 @@
               TRÂN TRỌNG KÍNH MỜI
             </h3>
             <div data-uuid="65962c65e036e">
-              <h4 class="font-questrial vs-attendance-name-text" id="ivy7a8" data-editable="true" style="
+              <h4 class="font-questrial vs-attendance-name-text" id="guestName" data-editable="true" style="
                   box-sizing: border-box;
                   font-weight: 600;
                   display: inline;
@@ -1064,6 +1064,20 @@
     <script>
       //XỬ LÝ FORM
       $(document).ready(function(){
+        // Get the query string (e.g., ?param1=value1&param2=value2)
+        const queryString = window.location.search;
+        // Create a URLSearchParams object
+        const urlParams = new URLSearchParams(queryString);
+        // Get parameters by name
+        const name = urlParams.get('name');  
+        const time = urlParams.get('time');  
+
+        if (!name) {
+          $('#guestName').text('Bạn cùng gia đình');
+        } else {
+            $('#guestName').text(name.replace(/-/g, ' '));
+        }
+       
         $('#contact-form-main').submit(function(e){
             e.preventDefault();
             const data = {
