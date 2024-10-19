@@ -257,7 +257,7 @@
               </h4>
               
             </div>
-            <h5 class="font-questrial mt-1 fst-italic" style="box-sizing: border-box" data-editable="true" data-uuid="65962c65e0378">
+            <h5 class="font-questrial mt-1 fst-italic" style="box-sizing: border-box" id="genDes" data-editable="true" data-uuid="65962c65e0378">
               (Tới dự Lễ Thành Hôn của hai con chúng tôi)
             </h5>
           </div>
@@ -1074,7 +1074,14 @@
         const name = urlParams.get('name');  
         const type = urlParams.get('type');  
         const time = urlParams.get('time');  
-
+        const genType = urlParams.get('gen-type');  
+        
+        if (genType == '1') {
+          $('#genDes').text('(Tới dự Lễ Thành Hôn của hai con chúng tôi)');
+        } else {
+            $('#genDes').text('(Tới dự Lễ Thành Hôn của hai chúng tôi)');
+        }
+        
         if (!name) {
           $('#guestName').text('Bạn cùng gia đình');
         } else {
