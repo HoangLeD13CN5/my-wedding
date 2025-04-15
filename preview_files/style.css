@@ -2238,6 +2238,19 @@ img {
     background: #f1f3ee
 }
 
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white; /* hoặc màu nền tùy bạn */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* đảm bảo nằm trên mọi thứ */
+  }
+
 .wpo-event-section .wpo-event-item .wpo-event-img .wpo-event-img-inner {
     overflow: hidden;
     border-radius: 50%;
@@ -2264,7 +2277,7 @@ img {
 .wpo-event-section .wpo-event-item .wpo-event-text h2 {
     padding: 10px 0;
     background: #a5aa9c;
-    font-size: 35px;
+    font-size: 32px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -2278,7 +2291,7 @@ img {
 }
 
 .wpo-event-section .wpo-event-item .wpo-event-text ul li {
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: 150.2%;
@@ -2290,7 +2303,7 @@ img {
     position: relative;
     display: inline-block;
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
     text-transform: capitalize
 }
 
